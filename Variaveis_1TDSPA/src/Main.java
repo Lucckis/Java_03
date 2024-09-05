@@ -2,32 +2,33 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //variaveis();
+        //Variaveis();
+        //OperadoresECondicionais
+        //ArrayOuVetores
+        var nomes = new String[] {"João", "Maria", "José Carlos (felps)"};
+        var numeros = new int[] {1,2,3,4,5,6,7,8,9};
 
-        //operadores();
-        var calculo = (1 + 2) - 3 * 2 / 5.0;
-        System.out.println(calculo);
-        calculo++;
-        System.out.println(calculo);
-        calculo--;
-        System.out.println(calculo);
+        System.out.println(nomes[0]);
+        System.out.println(nomes[2]);
+        System.out.println(numeros[3]);
 
-        //condicionais();
-        var scanner = new Scanner(System.in);
-        System.out.println("Digite a idade: ");
-        var idade = scanner.nextInt();
+        for(int i = 0; i< numeros.length; i++)
+            System.out.println(numeros[i]);
 
-        if(idade >= 18 && idade < 200)
-            System.out.println("A pessoa é maior de idade");
-        else if (idade > 200)
-            System.out.println("A pessoa é um elfo!");
-        else
-            System.out.println("A pessoa é menor de idade");
+        //para cada nomes no vetor de nomes
+        for (var nome : nomes)
+            //imprime o nome
+            System.out.println(nome);
 
-
+        //While
+        System.out.println("While: ");
+        var contador = 0;
+        while (contador < nomes.length){
+            System.out.println(nomes[contador++]);
+        }
 
     }
-     public static void variaveis(){
+     public static void Variaveis(){
          System.out.println("Sistema iniciando...");
 
          var scan = new Scanner(System.in);
@@ -77,6 +78,46 @@ public class Main {
          System.out.println("Sistema finalizando...");
 
 
+
+     }
+
+     public static void OperadoresECondicionais(){
+         var calculo = (1 + 2) - 3 * 2 / 5.0;
+         System.out.println(calculo);
+         calculo++;
+         System.out.println(calculo);
+         calculo--;
+         System.out.println(calculo);
+
+         //condicionais();
+         var scanner = new Scanner(System.in);
+         System.out.println("Digite a idade: ");
+         var idade = scanner.nextInt();
+
+         if(idade >= 18 && idade < 200)
+             System.out.println("A pessoa é maior de idade");
+         else if (idade > 200)
+             System.out.println("A pessoa é um elfo!");
+         else
+             System.out.println("A pessoa é menor de idade");
+
+         var notaDDD = 8;
+         var notaCPT = 3;
+         var notaBD = 10;
+
+
+         // Operador ternario
+         // função(<condição>) ? <valor se verdadeiro> : <valor se falso>
+         // na metematica: f(x) = x > 0 ? x : -x
+         System.out.println(
+                 notaDDD < 6 || notaCPT < 6 || notaBD < 6 ?
+                         "Reprovado em pelo menos uma disciplina, " +
+                                 "não ira se formar no tempo minimo" : "Aprovado em todas as disciplinas");
+
+         System.out.println("Digite um numero: ");
+         var numero = scanner.nextInt();
+         scanner.nextLine();
+         System.out.println(numero % 2 == 0 ? "O numero é par" : "O numero é impar");
 
      }
 }
